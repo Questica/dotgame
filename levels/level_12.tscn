@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3jjmum6eicec"]
+
+[ext_resource type="PackedScene" uid="uid://d24awvjduyide" path="res://pong/main.tscn" id="1_eci1u"]
+
+[node name="Level5" type="Node"]
+
+[node name="Main" parent="." instance=ExtResource("1_eci1u")]

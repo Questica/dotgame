@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf3usrjrl5p6d"]
+
+[ext_resource type="FontFile" uid="uid://cu1b0xcfhq0l" path="res://assets/retro.ttf" id="1_cspre"]
+
+[node name="Response" type="Label"]
+theme_override_fonts/font = ExtResource("1_cspre")
+theme_override_font_sizes/font_size = 40
+text = "This is what the game will give back"
+autowrap_mode = 3

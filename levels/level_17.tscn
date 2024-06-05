@@ -1,0 +1,815 @@
+[gd_scene load_steps=16 format=3 uid="uid://bq4y67vj874om"]
+
+[ext_resource type="Script" path="res://golf.gd" id="1_amkr6"]
+[ext_resource type="PackedScene" uid="uid://bss3ij758p8xh" path="res://ball.tscn" id="2_o7xv5"]
+[ext_resource type="Script" path="res://control1.gd" id="3_8xuto"]
+[ext_resource type="FontFile" uid="uid://cu1b0xcfhq0l" path="res://assets/retro.ttf" id="4_8gt71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxys8"]
+size = Vector2(25, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h8t7"]
+size = Vector2(1152, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1axf8"]
+size = Vector2(1153, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cq4r"]
+size = Vector2(58, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vffjc"]
+size = Vector2(235, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd1r4"]
+size = Vector2(43.5, 1.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt1dq"]
+size = Vector2(2, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y583p"]
+size = Vector2(43, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8qj0"]
+size = Vector2(35, 3.18196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqhic"]
+size = Vector2(525.5, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61ph0"]
+size = Vector2(219, 18)
+
+[node name="Level17" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("1_amkr6")
+
+[node name="Ball" parent="Node2D" instance=ExtResource("2_o7xv5")]
+z_index = 1
+position = Vector2(120, 390)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_8xuto")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="ColorRect2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/Area2D"]
+position = Vector2(24, 24)
+shape = SubResource("RectangleShape2D_gxys8")
+
+[node name="LevelNumber" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 36.0
+offset_right = 20.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_8gt71")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Borders" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Top" type="CollisionShape2D" parent="Borders"]
+position = Vector2(576, -18.5)
+shape = SubResource("RectangleShape2D_3h8t7")
+
+[node name="Bottom" type="CollisionShape2D" parent="Borders"]
+position = Vector2(575.5, 568)
+shape = SubResource("RectangleShape2D_1axf8")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/Bottom"]
+z_index = -1
+offset_left = -576.5
+offset_top = -20.0
+offset_right = 623.5
+offset_bottom = 20.0
+
+[node name="Left" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-28, 324)
+shape = SubResource("RectangleShape2D_8cq4r")
+
+[node name="Right" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1181, 324)
+shape = SubResource("RectangleShape2D_8cq4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+position = Vector2(881, 501)
+shape = SubResource("RectangleShape2D_vffjc")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D"]
+offset_left = -118.0
+offset_top = -12.0
+offset_right = 117.0
+offset_bottom = 11.0
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders"]
+position = Vector2(407, 263)
+shape = SubResource("RectangleShape2D_vffjc")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D10"]
+offset_left = -118.0
+offset_top = -12.0
+offset_right = 117.0
+offset_bottom = 11.0
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Borders"]
+position = Vector2(167, 263)
+shape = SubResource("RectangleShape2D_vffjc")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D11"]
+offset_left = -118.0
+offset_top = -12.0
+offset_right = 117.0
+offset_bottom = 11.0
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1018, 430)
+shape = SubResource("RectangleShape2D_vffjc")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D7"]
+offset_left = -118.0
+offset_top = -12.0
+offset_right = 117.0
+offset_bottom = 11.0
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Borders"]
+position = Vector2(874, 354)
+shape = SubResource("RectangleShape2D_vffjc")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D8"]
+offset_left = -118.0
+offset_top = -12.0
+offset_right = 117.0
+offset_bottom = 11.0
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Borders"]
+position = Vector2(644, 303)
+rotation = 0.349066
+shape = SubResource("RectangleShape2D_vffjc")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D9"]
+offset_left = -118.0
+offset_top = -12.0
+offset_right = 117.0
+offset_bottom = 11.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(577.25, 302)
+shape = SubResource("RectangleShape2D_vd1r4")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D2"]
+offset_left = -22.0
+offset_top = -1.0
+offset_right = 22.0
+offset_bottom = 1.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders"]
+position = Vector2(598, 323.5)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D3"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="Borders"]
+position = Vector2(165, 528)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D30"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="Borders"]
+position = Vector2(198, 480)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D31"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="Borders"]
+position = Vector2(231, 430)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D32"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="Borders"]
+position = Vector2(264, 392)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D33"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="Borders"]
+position = Vector2(331, 411)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D34"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="Borders"]
+position = Vector2(296, 458)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D35"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="Borders"]
+position = Vector2(325, 492)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D36"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="Borders"]
+position = Vector2(372, 521)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D37"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="Borders"]
+position = Vector2(398, 442)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D38"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="Borders"]
+position = Vector2(435, 389)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D39"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D40" type="CollisionShape2D" parent="Borders"]
+position = Vector2(439, 463)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D40"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D41" type="CollisionShape2D" parent="Borders"]
+position = Vector2(473, 527)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D41"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D42" type="CollisionShape2D" parent="Borders"]
+position = Vector2(497, 467)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D42"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D43" type="CollisionShape2D" parent="Borders"]
+position = Vector2(527, 386)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D43"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D44" type="CollisionShape2D" parent="Borders"]
+position = Vector2(553, 517)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D44"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D45" type="CollisionShape2D" parent="Borders"]
+position = Vector2(579, 458)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D45"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D46" type="CollisionShape2D" parent="Borders"]
+position = Vector2(612, 406)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D46"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D47" type="CollisionShape2D" parent="Borders"]
+position = Vector2(649, 357)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D47"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D48" type="CollisionShape2D" parent="Borders"]
+position = Vector2(662, 434)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D48"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D49" type="CollisionShape2D" parent="Borders"]
+position = Vector2(672, 506)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D49"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D50" type="CollisionShape2D" parent="Borders"]
+position = Vector2(625, 505)
+shape = SubResource("RectangleShape2D_nt1dq")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D50"]
+offset_left = -1.0
+offset_top = -22.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders"]
+position = Vector2(577.5, 346)
+shape = SubResource("RectangleShape2D_y583p")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D4"]
+offset_left = -22.0
+offset_top = -1.0
+offset_right = 21.0
+offset_bottom = 1.0
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders"]
+position = Vector2(541.875, 333.125)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_i8qj0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D5"]
+offset_left = -18.0
+offset_top = -2.0
+offset_right = 18.0
+offset_bottom = 2.0
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders"]
+position = Vector2(268.25, 353)
+shape = SubResource("RectangleShape2D_tqhic")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D6"]
+offset_left = -263.0
+offset_top = -23.0
+offset_right = 262.0
+offset_bottom = 22.0
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Borders"]
+position = Vector2(473, 71)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D12"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Borders"]
+position = Vector2(327, 52)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D13"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Borders"]
+position = Vector2(171, 24)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D14"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Borders"]
+position = Vector2(81, 54)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D15"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Borders"]
+position = Vector2(220, 222)
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D16"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Borders"]
+position = Vector2(304, 217)
+rotation = -0.315074
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D17"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Borders"]
+position = Vector2(449, 235)
+rotation = -0.269144
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D18"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Borders"]
+position = Vector2(799, 256)
+rotation = 1.97323
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D19"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1165, 203)
+rotation = 2.49206
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D20"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1130, 154)
+rotation = 2.49206
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D21"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1101, 111)
+rotation = 2.49206
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D22"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1072, 77)
+rotation = 2.49206
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D23"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1048, 42)
+rotation = 2.49206
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D24"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1014, 9.00003)
+rotation = 2.49206
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D25"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Borders"]
+position = Vector2(918, -49)
+rotation = 2.05212
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D26"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Borders"]
+position = Vector2(3.99997, 96)
+rotation = 1.58563
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D27"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D51" type="CollisionShape2D" parent="Borders"]
+position = Vector2(3, 313)
+rotation = 1.58563
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D51"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D52" type="CollisionShape2D" parent="Borders"]
+position = Vector2(2, 499)
+rotation = 1.58563
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D52"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D53" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1155, 504)
+rotation = 1.58563
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D53"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D54" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1158, 296)
+rotation = 1.58563
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D54"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D55" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1153, 156)
+rotation = 1.58563
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D55"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D56" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1153, 73)
+rotation = 1.58563
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D56"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D57" type="CollisionShape2D" parent="Borders"]
+position = Vector2(101, 1)
+rotation = 3.17574
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D57"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D58" type="CollisionShape2D" parent="Borders"]
+position = Vector2(321, 4)
+rotation = 3.17574
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D58"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D59" type="CollisionShape2D" parent="Borders"]
+position = Vector2(538, 1)
+rotation = 3.17574
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D59"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D60" type="CollisionShape2D" parent="Borders"]
+position = Vector2(738, 1)
+rotation = 3.17574
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D60"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D61" type="CollisionShape2D" parent="Borders"]
+position = Vector2(922, 2)
+rotation = 3.17574
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D61"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D62" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1062, 0.999999)
+rotation = 3.17574
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D62"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Borders"]
+position = Vector2(152, 391)
+rotation = 2.33322
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D28"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Borders"]
+position = Vector2(634, 101)
+rotation = 1.65924
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D29"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D63" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-4, 683)
+rotation = 1.65924
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D63"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[node name="CollisionShape2D64" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1144, 653)
+rotation = 1.65924
+shape = SubResource("RectangleShape2D_61ph0")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/CollisionShape2D64"]
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 109.0
+offset_bottom = 9.0
+
+[connection signal="body_entered" from="ColorRect2/Area2D" to="Control" method="_on_area_2d_body_entered"]

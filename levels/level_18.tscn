@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=3 uid="uid://0bm6yi81w0yy"]
+
+[ext_resource type="Script" path="res://controlshoppingcart.gd" id="1_c8vh8"]
+[ext_resource type="Texture2D" uid="uid://r8yerhhe3h73" path="res://assets/cartreturn.png" id="2_1hwcm"]
+[ext_resource type="FontFile" uid="uid://cu1b0xcfhq0l" path="res://assets/retro.ttf" id="2_gipwf"]
+[ext_resource type="Theme" uid="uid://x1jilwxptgyk" path="res://tooltiptheme.tres" id="3_vc1r4"]
+[ext_resource type="Script" path="res://CharacterBody2D (3).gd" id="5_jjplt"]
+[ext_resource type="Texture2D" uid="uid://bsvwy1gk85wmi" path="res://assets/shoppingcart.png" id="6_ikev4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_032ic"]
+size = Vector2(125, 44.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywlio"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7n2h5"]
+size = Vector2(72, 40)
+
+[node name="Level18" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_c8vh8")
+
+[node name="CartReturnTexture" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = -257.0
+offset_right = 448.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+texture = ExtResource("2_1hwcm")
+
+[node name="CartReturn" type="Label" parent="Control/CartReturnTexture"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 21.0
+offset_right = 116.0
+offset_bottom = 86.0
+theme = ExtResource("3_vc1r4")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "cart
+return"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnArea" type="Area2D" parent="Control/CartReturnTexture"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/CartReturnTexture/ReturnArea"]
+position = Vector2(65, 104.25)
+shape = SubResource("RectangleShape2D_032ic")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LevelNumber" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 36.0
+offset_right = 20.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_gipwf")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Floor" type="Area2D" parent="Control"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Floor"]
+position = Vector2(576, 697)
+shape = SubResource("RectangleShape2D_ywlio")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(181, 519)
+script = ExtResource("5_jjplt")
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+offset_left = -97.0
+offset_top = 49.0
+offset_right = -17.0
+offset_bottom = 129.0
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody2D"]
+offset_left = -17.0
+offset_top = 49.0
+offset_right = 63.0
+offset_bottom = 129.0
+texture = ExtResource("6_ikev4")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D/TextureRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/TextureRect/Area2D"]
+position = Vector2(44, 36)
+shape = SubResource("RectangleShape2D_7n2h5")
+
+[node name="Button" type="Button" parent="CharacterBody2D"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -97.0
+offset_top = 49.0
+offset_right = -17.0
+offset_bottom = 129.0
+
+[node name="BoxTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="MouseTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="area_entered" from="Control/CartReturnTexture/ReturnArea" to="Control" method="_on_return_area_area_entered"]
+[connection signal="area_exited" from="Control/CartReturnTexture/ReturnArea" to="Control" method="_on_return_area_area_exited"]
+[connection signal="body_entered" from="Control/Floor" to="Control" method="_on_floor_body_entered"]
+[connection signal="body_entered" from="CharacterBody2D/TextureRect/Area2D" to="Control" method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="CharacterBody2D/Button" to="Control" method="_on_button_pressed"]
+[connection signal="timeout" from="BoxTimer" to="Control" method="_on_box_timer_timeout"]
+[connection signal="timeout" from="MouseTimer" to="Control" method="_on_mouse_timer_timeout"]

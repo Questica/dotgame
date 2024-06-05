@@ -1,0 +1,224 @@
+[gd_scene load_steps=5 format=3 uid="uid://c85bq5mjohvwm"]
+
+[ext_resource type="Script" path="res://controllogic.gd" id="1_gspas"]
+[ext_resource type="FontFile" uid="uid://cu1b0xcfhq0l" path="res://assets/retro.ttf" id="2_sj6hi"]
+
+[sub_resource type="Theme" id="Theme_pf11e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0u5s"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[node name="Level16" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_gspas")
+
+[node name="Button" type="Button" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = 143.0
+offset_right = -247.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "help
+"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = 143.0
+offset_right = -248.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="LevelNumber" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 36.0
+offset_right = 20.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_sj6hi")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Riddle" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -453.0
+offset_top = 133.0
+offset_right = 454.0
+offset_bottom = 400.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_sj6hi")
+theme_override_font_sizes/font_size = 40
+text = "Phil is looking at Anne.
+Anne is looking at Steve.
+Phil is red, and Steve is not.
+Is a red person looking
+at a non-red person?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(800, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -186.0
+offset_right = 400.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Panel" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_pf11e")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0u5s")
+
+[node name="Riddle2" type="Label" parent="HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -25.5
+offset_right = 46.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sj6hi")
+theme_override_font_sizes/font_size = 40
+text = "Yes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="HBoxContainer/Panel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 264.0
+offset_bottom = 51.0
+
+[node name="Panel2" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_pf11e")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0u5s")
+
+[node name="Riddle3" type="Label" parent="HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -25.5
+offset_right = 31.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sj6hi")
+theme_override_font_sizes/font_size = 40
+text = "No"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="HBoxContainer/Panel2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 264.0
+offset_bottom = 51.0
+
+[node name="Panel3" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_pf11e")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0u5s")
+
+[node name="Riddle4" type="Label" parent="HBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -25.5
+offset_right = 42.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sj6hi")
+theme_override_font_sizes/font_size = 40
+text = "Idk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="HBoxContainer/Panel3"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 264.0
+offset_bottom = 51.0
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel/Button2" to="Control" method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel2/Button3" to="Control" method="_on_button_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel3/Button4" to="Control" method="_on_button_4_pressed"]

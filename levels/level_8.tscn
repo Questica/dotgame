@@ -1,0 +1,534 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4kgymt4e6wsb"]
+
+[ext_resource type="Script" path="res://controllineup.gd" id="1_fyule"]
+[ext_resource type="Script" path="res://CharacterBodylineup.gd" id="2_j7wjc"]
+[ext_resource type="FontFile" uid="uid://cu1b0xcfhq0l" path="res://assets/retro.ttf" id="2_t4fwc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g7fq"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n0yg"]
+size = Vector2(11, 661)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkfso"]
+size = Vector2(1164, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec2mn"]
+size = Vector2(1170, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn4h8"]
+size = Vector2(7, 662)
+
+[node name="Level17" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fyule")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(556, 304)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Button" type="Button" parent="CharacterBody2D"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D8" type="CharacterBody2D" parent="."]
+position = Vector2(506, 204)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D8"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.945098, 0.00392157, 0.00392157, 1)
+
+[node name="Button10" type="Button" parent="CharacterBody2D8"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D8"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D9" type="CharacterBody2D" parent="."]
+position = Vector2(606, 204)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D9"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.937255, 0.0627451, 0.0627451, 1)
+
+[node name="Button11" type="Button" parent="CharacterBody2D9"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -5.0
+offset_right = 44.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D9"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D10" type="CharacterBody2D" parent="."]
+position = Vector2(506, 404)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D10"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.945098, 0.00392157, 0.00392157, 0.980392)
+
+[node name="Button12" type="Button" parent="CharacterBody2D10"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D10"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D11" type="CharacterBody2D" parent="."]
+position = Vector2(606, 404)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D11"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.984314, 0.0196078, 0.0196078, 1)
+
+[node name="Button13" type="Button" parent="CharacterBody2D11"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D11"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D7" type="CharacterBody2D" parent="."]
+position = Vector2(656, 304)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D7"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.94902, 0.12549, 0.12549, 1)
+
+[node name="Button2" type="Button" parent="CharacterBody2D7"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D7"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(756, 304)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D2"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.666667, 0, 0, 1)
+
+[node name="Button3" type="Button" parent="CharacterBody2D2"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="."]
+position = Vector2(856, 304)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D3"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.666667, 0.666667, 1)
+
+[node name="Button4" type="Button" parent="CharacterBody2D3"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D3"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D4" type="CharacterBody2D" parent="."]
+position = Vector2(256, 304)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D4"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.933333, 0.933333, 0.933333, 1)
+
+[node name="Button5" type="Button" parent="CharacterBody2D4"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D5" type="CharacterBody2D" parent="."]
+position = Vector2(356, 304)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D5"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.670588, 0.862745, 0.937255, 1)
+
+[node name="Button6" type="Button" parent="CharacterBody2D5"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="CharacterBody2D6" type="CharacterBody2D" parent="."]
+position = Vector2(456, 304)
+script = ExtResource("2_j7wjc")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D6"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.604449, 0.540419, 0, 1)
+
+[node name="Button7" type="Button" parent="CharacterBody2D6"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D6"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7g7fq")
+
+[node name="LevelNumber" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 36.0
+offset_right = 20.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_t4fwc")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1156.5, 321)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1161, -0.5)
+shape = SubResource("RectangleShape2D_0n0yg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1156.5, 321)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-584.5, -326.5)
+shape = SubResource("RectangleShape2D_pkfso")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1156.5, 321)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-581.5, 329)
+shape = SubResource("RectangleShape2D_ec2mn")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(1156.5, 321)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_wn4h8")
+
+[node name="StartTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[node name="StopTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="CharacterBody2D/Button" to="Control" method="_on_button_pressed"]
+[connection signal="pressed" from="CharacterBody2D8/Button10" to="Control" method="_on_button_10_pressed"]
+[connection signal="pressed" from="CharacterBody2D9/Button11" to="Control" method="_on_button_11_pressed"]
+[connection signal="pressed" from="CharacterBody2D10/Button12" to="Control" method="_on_button_12_pressed"]
+[connection signal="pressed" from="CharacterBody2D11/Button13" to="Control" method="_on_button_13_pressed"]
+[connection signal="pressed" from="CharacterBody2D7/Button2" to="Control" method="_on_button_2_pressed"]
+[connection signal="pressed" from="CharacterBody2D2/Button3" to="Control" method="_on_button_3_pressed"]
+[connection signal="pressed" from="CharacterBody2D3/Button4" to="Control" method="_on_button_4_pressed"]
+[connection signal="pressed" from="CharacterBody2D4/Button5" to="Control" method="_on_button_5_pressed"]
+[connection signal="pressed" from="CharacterBody2D5/Button6" to="Control" method="_on_button_6_pressed"]
+[connection signal="pressed" from="CharacterBody2D6/Button7" to="Control" method="_on_button_7_pressed"]
+[connection signal="timeout" from="StartTimer" to="Control" method="_on_start_timer_timeout"]
+[connection signal="timeout" from="StopTimer" to="Control" method="_on_stop_timer_timeout"]

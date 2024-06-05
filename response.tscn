@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx5syjhlmb80a"]
+
+[ext_resource type="FontFile" uid="uid://cu1b0xcfhq0l" path="res://assets/retro.ttf" id="1_idj6c"]
+[ext_resource type="Script" path="res://response.gd" id="1_vu0mu"]
+[ext_resource type="PackedScene" uid="uid://bf3usrjrl5p6d" path="res://responses.tscn" id="3_s4asj"]
+
+[node name="Response" type="VBoxContainer"]
+script = ExtResource("1_vu0mu")
+
+[node name="InputHistory" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_idj6c")
+theme_override_font_sizes/font_size = 40
+text = "> This is what the user typed"
+
+[node name="Response" parent="." instance=ExtResource("3_s4asj")]
+layout_mode = 2

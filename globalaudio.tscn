@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://di6bqd7su2qmw"]
+
+[ext_resource type="AudioStream" uid="uid://d4kkxw4oandr4" path="res://music/paganpoetry.mp3" id="1_2jvk0"]
+[ext_resource type="Script" path="res://globalaudio.gd" id="1_l46l2"]
+[ext_resource type="Texture2D" uid="uid://c0tkh0ptneq2u" path="res://assets/soundon1.png" id="1_pxb17"]
+[ext_resource type="Texture2D" uid="uid://b3sih82v8gr2k" path="res://assets/soundoff.png" id="2_pj2vw"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gm28j"]
+streams_count = 1
+stream_0/stream = ExtResource("1_2jvk0")
+stream_0/weight = 1.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_l46l2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_top = 7.0
+offset_right = -5.0
+offset_bottom = 96.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 10.0
+offset_right = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+mouse_filter = 2
+texture = ExtResource("1_pxb17")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 10.0
+offset_right = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+mouse_filter = 2
+texture = ExtResource("2_pj2vw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_gm28j")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/Button" to="." method="_on_button_toggled"]

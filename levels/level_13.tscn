@@ -1,0 +1,577 @@
+[gd_scene load_steps=12 format=3 uid="uid://csgy1pcrxkf2k"]
+
+[ext_resource type="Script" path="res://controlidle.gd" id="1_glldp"]
+[ext_resource type="FontFile" uid="uid://cu1b0xcfhq0l" path="res://assets/retro.ttf" id="2_2fufg"]
+[ext_resource type="Theme" uid="uid://x1jilwxptgyk" path="res://tooltiptheme.tres" id="3_lc5cm"]
+[ext_resource type="Texture2D" uid="uid://ddse8bgvbn5d0" path="res://assets/redicon.png" id="3_wu2iv"]
+[ext_resource type="Texture2D" uid="uid://b2ndu22thspa7" path="res://assets/pinkicon.png" id="4_6shpk"]
+[ext_resource type="Texture2D" uid="uid://b0yvx5yvp8ywt" path="res://assets/alphaicon.png" id="4_j7ti7"]
+[ext_resource type="Texture2D" uid="uid://nek1pod8b3by" path="res://assets/blueicon.png" id="5_dj332"]
+[ext_resource type="Texture2D" uid="uid://qlibkdayyayt" path="res://assets/greenicon.png" id="6_ekncu"]
+[ext_resource type="Texture2D" uid="uid://buleykix3w30y" path="res://assets/cyanicon.png" id="7_6qylt"]
+[ext_resource type="Texture2D" uid="uid://c2gwlcj7v345i" path="res://assets/doticon.png" id="10_h2sqv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqk14"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[node name="Level15" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_glldp")
+
+[node name="Button" type="Button" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="RedAdderIcon" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+offset_left = 567.0
+offset_top = 276.0
+offset_right = 603.0
+offset_bottom = 312.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wu2iv")
+
+[node name="AlphaAdderIcon" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+offset_left = 528.0
+offset_top = 297.0
+offset_right = 564.0
+offset_bottom = 333.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_j7ti7")
+
+[node name="PinkAdderIcon" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+offset_left = 606.0
+offset_top = 297.0
+offset_right = 642.0
+offset_bottom = 333.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_6shpk")
+
+[node name="BlueRemoverIcon" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+offset_left = 606.0
+offset_top = 360.0
+offset_right = 642.0
+offset_bottom = 396.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dj332")
+
+[node name="GreenRemoverIcon" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+offset_left = 528.0
+offset_top = 360.0
+offset_right = 564.0
+offset_bottom = 396.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ekncu")
+
+[node name="CyanRemoverIcon" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+offset_left = 567.0
+offset_top = 361.0
+offset_right = 603.0
+offset_bottom = 397.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_6qylt")
+
+[node name="Labels" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -199.0
+offset_top = -270.0
+offset_right = -6.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DotLabel" type="Label" parent="Control/Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "dot:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RedLabel" type="Label" parent="Control/Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "red:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GreenLabel" type="Label" parent="Control/Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "green:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BlueLabel" type="Label" parent="Control/Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "blue:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AlphaLabel" type="Label" parent="Control/Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "alpha:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ClickableLabel" type="Label" parent="Control/Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "clickable:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -270.0
+offset_right = 196.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DotValue" type="Label" parent="Control/Values"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "yes"
+vertical_alignment = 1
+
+[node name="RedValue" type="Label" parent="Control/Values"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "0"
+vertical_alignment = 1
+
+[node name="GreenValue" type="Label" parent="Control/Values"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "255"
+vertical_alignment = 1
+
+[node name="BlueValue" type="Label" parent="Control/Values"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "255"
+vertical_alignment = 1
+
+[node name="AlphaValue" type="Label" parent="Control/Values"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "0"
+vertical_alignment = 1
+
+[node name="ClickableValue" type="Label" parent="Control/Values"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 32
+text = "no"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -442.0
+offset_top = -290.5
+offset_right = -29.0
+offset_bottom = 290.5
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_xqk14")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="DotButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "005 alpha: dot"
+icon = ExtResource("10_h2sqv")
+alignment = 0
+
+[node name="AlphaAdderButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "015 alpha: alpha adder"
+icon = ExtResource("4_j7ti7")
+alignment = 0
+
+[node name="AlphaButtonButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "010 alpha: alpha button"
+icon = ExtResource("4_j7ti7")
+alignment = 0
+
+[node name="BlueRemoverButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "035 alpha: blue remover"
+icon = ExtResource("5_dj332")
+alignment = 0
+
+[node name="GreenRemoverButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "045 alpha: green remover"
+icon = ExtResource("6_ekncu")
+alignment = 0
+
+[node name="CyanRemoverButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "085 alpha: cyan remover"
+icon = ExtResource("7_6qylt")
+alignment = 0
+
+[node name="BlueButtonButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "030 alpha: blue button"
+icon = ExtResource("5_dj332")
+alignment = 0
+
+[node name="GreenButtonButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "040 alpha: green button"
+icon = ExtResource("6_ekncu")
+alignment = 0
+
+[node name="CyanButtonButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "070 alpha: cyan button"
+icon = ExtResource("7_6qylt")
+alignment = 0
+
+[node name="RedAdderButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "105 alpha: red adder"
+icon = ExtResource("3_wu2iv")
+alignment = 0
+
+[node name="RedButtonButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "090 alpha: red button"
+icon = ExtResource("3_wu2iv")
+alignment = 0
+
+[node name="PinkAdderButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "135 alpha: pink adder"
+icon = ExtResource("4_6shpk")
+alignment = 0
+
+[node name="PinkButtonButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(405, 43)
+layout_mode = 2
+theme = ExtResource("3_lc5cm")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 22
+text = "100 alpha: pink button"
+icon = ExtResource("4_6shpk")
+alignment = 0
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.0
+offset_top = -235.0
+offset_right = -138.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_xqk14")
+
+[node name="ButtonsLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 290.0
+offset_right = 318.0
+offset_bottom = 341.0
+theme = ExtResource("3_lc5cm")
+theme_override_font_sizes/font_size = 40
+text = "buttons"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+offset_right = 136.0
+offset_bottom = 90.0
+scale = Vector2(3, 3)
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="AlphaButton" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("4_j7ti7")
+
+[node name="BlueButton" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("5_dj332")
+
+[node name="GreenButton" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("6_ekncu")
+
+[node name="CyanButton" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("7_6qylt")
+
+[node name="RedButton" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("3_wu2iv")
+
+[node name="PinkButton" type="TextureButton" parent="Panel/MarginContainer/GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("4_6shpk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 1, 1, 1)
+
+[node name="LevelNumber" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 36.0
+offset_right = 20.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_2fufg")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlphaTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="AlphaTimer2" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="BlueTimer" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="GreenTimer" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="CyanTimer" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="RedTimer" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="PinkTimer" type="Timer" parent="."]
+wait_time = 0.8
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/DotButton" to="Control" method="_on_dot_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/AlphaAdderButton" to="Control" method="_on_alpha_adder_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/AlphaButtonButton" to="Control" method="_on_alpha_button_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/BlueRemoverButton" to="Control" method="_on_blue_remover_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/GreenRemoverButton" to="Control" method="_on_green_remover_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/CyanRemoverButton" to="Control" method="_on_cyan_remover_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/BlueButtonButton" to="Control" method="_on_blue_button_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/GreenButtonButton" to="Control" method="_on_green_button_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/CyanButtonButton" to="Control" method="_on_cyan_button_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/RedAdderButton" to="Control" method="_on_red_adder_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/RedButtonButton" to="Control" method="_on_red_button_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/PinkAdderButton" to="Control" method="_on_pink_adder_button_pressed"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/PinkButtonButton" to="Control" method="_on_pink_button_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridContainer/AlphaButton" to="Control" method="_on_alpha_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridContainer/BlueButton" to="Control" method="_on_blue_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridContainer/GreenButton" to="Control" method="_on_green_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridContainer/CyanButton" to="Control" method="_on_cyan_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridContainer/RedButton" to="Control" method="_on_red_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/GridContainer/PinkButton" to="Control" method="_on_pink_button_pressed"]
+[connection signal="timeout" from="AlphaTimer" to="Control" method="_on_alpha_timer_timeout"]
+[connection signal="timeout" from="AlphaTimer2" to="Control" method="_on_alpha_timer_2_timeout"]
+[connection signal="timeout" from="BlueTimer" to="Control" method="_on_blue_timer_timeout"]
+[connection signal="timeout" from="GreenTimer" to="Control" method="_on_green_timer_timeout"]
+[connection signal="timeout" from="CyanTimer" to="Control" method="_on_cyan_timer_timeout"]
+[connection signal="timeout" from="RedTimer" to="Control" method="_on_red_timer_timeout"]
+[connection signal="timeout" from="PinkTimer" to="Control" method="_on_pink_timer_timeout"]

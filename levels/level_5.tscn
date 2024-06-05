@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnlxp36q2n76l"]
+
+[ext_resource type="Script" path="res://control1.gd" id="1_v3rml"]
+[ext_resource type="FontFile" uid="uid://cu1b0xcfhq0l" path="res://assets/retro.ttf" id="2_1jv0k"]
+[ext_resource type="Script" path="res://CharacterBody2Dbounc.gd" id="2_g8yxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvn22"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qwio"]
+size = Vector2(11, 661)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0xy3"]
+size = Vector2(1164, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsbwm"]
+size = Vector2(1170, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq2c"]
+size = Vector2(7, 662)
+
+[node name="Level14" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_v3rml")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(556, 304)
+script = ExtResource("2_g8yxp")
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Button" type="Button" parent="CharacterBody2D"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_fvn22")
+
+[node name="LevelNumber" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 36.0
+offset_right = 20.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_1jv0k")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1156.5, 321)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1161, -0.5)
+shape = SubResource("RectangleShape2D_5qwio")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1156.5, 321)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-584.5, -326.5)
+shape = SubResource("RectangleShape2D_k0xy3")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1156.5, 321)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-581.5, 329)
+shape = SubResource("RectangleShape2D_wsbwm")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(1156.5, 321)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_5lq2c")
+
+[connection signal="pressed" from="CharacterBody2D/Button" to="Control" method="_on_button_pressed"]

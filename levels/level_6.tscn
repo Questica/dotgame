@@ -1,0 +1,134 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg2igot0psxas"]
+
+[ext_resource type="Script" path="res://Control10.gd" id="1_420fu"]
+[ext_resource type="FontFile" uid="uid://cu1b0xcfhq0l" path="res://assets/retro.ttf" id="4_d2tjh"]
+
+[node name="Level10" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_420fu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help
+"
+
+[node name="CheckButton" type="CheckButton" parent="Control"]
+layout_mode = 0
+offset_left = -536.0
+offset_top = -284.0
+offset_right = -492.0
+offset_bottom = -260.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -40.0
+offset_right = 140.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VSlider" type="VSlider" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 1
+max_value = 255.0
+
+[node name="VSlider2" type="VSlider" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 1
+max_value = 255.0
+
+[node name="VSlider3" type="VSlider" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 1
+max_value = 255.0
+
+[node name="VSlider4" type="VSlider" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 1
+max_value = 255.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelNumber" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 36.0
+offset_right = 20.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_d2tjh")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
+[connection signal="toggled" from="Control/CheckButton" to="Control" method="_on_check_button_toggled"]
+[connection signal="value_changed" from="Control/HBoxContainer/VSlider" to="Control" method="_on_v_slider_value_changed"]
+[connection signal="value_changed" from="Control/HBoxContainer/VSlider2" to="Control" method="_on_v_slider_2_value_changed"]
+[connection signal="value_changed" from="Control/HBoxContainer/VSlider3" to="Control" method="_on_v_slider_3_value_changed"]
+[connection signal="value_changed" from="Control/HBoxContainer/VSlider4" to="Control" method="_on_v_slider_4_value_changed"]
