@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://di6bqd7su2qmw"]
+[gd_scene load_steps=7 format=3 uid="uid://di6bqd7su2qmw"]
 
 [ext_resource type="AudioStream" uid="uid://d4kkxw4oandr4" path="res://music/paganpoetry.mp3" id="1_2jvk0"]
 [ext_resource type="Script" path="res://globalaudio.gd" id="1_l46l2"]
 [ext_resource type="Texture2D" uid="uid://c0tkh0ptneq2u" path="res://assets/soundon1.png" id="1_pxb17"]
 [ext_resource type="Texture2D" uid="uid://b3sih82v8gr2k" path="res://assets/soundoff.png" id="2_pj2vw"]
+[ext_resource type="AudioStream" uid="uid://bpf4c2sj18hew" path="res://music/quest_Am_1.wav" id="5_tyqe6"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gm28j"]
-streams_count = 1
+streams_count = 2
 stream_0/stream = ExtResource("1_2jvk0")
 stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_tyqe6")
+stream_1/weight = 1.0
 
 [node name="Control" type="Control"]
 layout_mode = 3

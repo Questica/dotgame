@@ -28,5 +28,6 @@ mouse_cursor/custom_image="res://assets/6eaa1a1af58b4d5e942e108eb57e7fc1KHeZBBTO
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
