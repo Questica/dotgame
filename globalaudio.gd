@@ -14,3 +14,6 @@ func _on_button_pressed() -> void:
 		$CanvasLayer/TextureRect2.show()
 		$AudioStreamPlayer.stream_paused = true
 		toggled_off = true
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.playing = true

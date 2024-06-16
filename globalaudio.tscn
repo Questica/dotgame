@@ -7,10 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://bpf4c2sj18hew" path="res://music/quest_Am_1.wav" id="5_tyqe6"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gm28j"]
+playback_mode = 2
 streams_count = 2
-stream_0/stream = ExtResource("1_2jvk0")
+stream_0/stream = ExtResource("5_tyqe6")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("5_tyqe6")
+stream_1/stream = ExtResource("1_2jvk0")
 stream_1/weight = 1.0
 
 [node name="Control" type="Control"]
@@ -72,3 +73,4 @@ autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/Button" to="." method="_on_button_toggled"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
